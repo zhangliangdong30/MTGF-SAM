@@ -1,0 +1,14 @@
+{
+  "combined_dir": "E:\\jiuzhaigou_data\\data\\样本数据\\256\\256\\jiuzhaigou_train_dataset\\all",
+  "images_dir": "E:\\jiuzhaigou_data\\data\\样本数据\\256\\256\\jiuzhaigou_train_dataset\\all\\images",
+  "dem_dir": "E:\\jiuzhaigou_data\\data\\样本数据\\256\\256\\jiuzhaigou_train_dataset\\all\\dem",
+  "annotations": "E:\\jiuzhaigou_data\\data\\样本数据\\256\\256\\jiuzhaigou_train_dataset\\all\\annotations.json",
+  "image_count": 1337,
+  "dem_count": 1337,
+  "annotation_image_count": 1337,
+  "annotation_count": 1884,
+  "category_count": 1,
+  "missing_dem_for_images": [],
+  "extra_dem_without_image": [],
+  "annotation_files_not_in_images": []
+}

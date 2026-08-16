@@ -1,0 +1,28 @@
+# MTGF-SAM dependencies.
+#
+# The versions below are the ones every reported result was produced with, on
+# Python 3.12.12 / CUDA 12.8 / a single RTX 5090 (sm_120, Blackwell). Blackwell
+# needed PyTorch nightlies at the time; on older GPUs a stable torch >= 2.4 with a
+# matching CUDA build should work — the only hardware-specific line in the code is
+# `torch.backends.cuda.preferred_blas_library("cublaslt")`, which is wrapped in a
+# try/except and is harmless elsewhere.
+
+# --- core ---------------------------------------------------------------------
+# Install torch/torchvision from the index matching your CUDA version first, e.g.
+#   pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cu128
+torch>=2.4                    # tested: 2.12.0.dev20260408+cu128
+torchvision>=0.19             # tested: 0.27.0.dev20260407+cu128
+
+numpy>=1.26,<2                # tested: 1.26.4
+scipy>=1.11                   # tested: 1.16.3  (ndimage: labelling, dilation)
+Pillow>=10                    # tested: 12.0.0  (float32 GeoTIFF reading via mode "F")
+tqdm>=4.66                    # tested: 4.67.1
+
+# --- SAM3 (sam3_dem/) ---------------------------------------------------------
+huggingface_hub>=0.25         # tested: 0.36.2  (optional: base-weight download)
+iopath                        # g_pathmgr, used by the checkpoint loader
+hydra-core                    # SAM3 config composition
+omegaconf
+
+# --- dataset-specific ---------------------------------------------------------
+h5py>=3.10                    # tested: 3.15.1  (Landslide4Sense .h5 patches only)
